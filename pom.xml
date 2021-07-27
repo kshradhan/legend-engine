@@ -26,7 +26,7 @@
     <name>Legend Engine</name>
     <groupId>org.finos.legend.engine</groupId>
     <artifactId>legend-engine</artifactId>
-    <version>2.36.1-SNAPSHOT</version>
+    <version>2.37.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -37,6 +37,7 @@
         <module>legend-engine-executionPlan-execution-store-inMemory</module>
         <module>legend-engine-executionPlan-execution-store-relational</module>
         <module>legend-engine-executionPlan-execution-store-relational-connection</module>
+        <module>legend-engine-executionPlan-execution-store-relational-connection-api</module>
         <module>legend-engine-external-shared</module>
         <module>legend-engine-external-format-avro</module>
         <module>legend-engine-external-format-jsonSchema</module>
@@ -56,6 +57,7 @@
         <module>legend-engine-language-pure-dsl-service-generation</module>
         <module>legend-engine-language-pure-dsl-service-execution</module>
         <module>legend-engine-language-pure-store-relational</module>
+        <module>legend-engine-language-graphQL-grammar</module>
         <module>legend-engine-test-runner-shared</module>
         <module>legend-engine-test-runner-mapping</module>
         <module>legend-engine-test-runner-service</module>
@@ -63,6 +65,7 @@
         <module>legend-engine-protocol</module>
         <module>legend-engine-protocol-pure</module>
         <module>legend-engine-protocol-relational</module>
+        <module>legend-engine-protocol-graphQL</module>
         <module>legend-engine-query-pure</module>
         <module>legend-engine-shared-core</module>
         <module>legend-engine-shared-javaCompiler</module>
@@ -70,7 +73,6 @@
         <module>legend-engine-test-reports</module>
         <module>legend-engine-extensions-collection-execution</module>
         <module>legend-engine-extensions-collection-generation</module>
-        <module>legend-engine-executionPlan-execution-store-relational-connection-api</module>
     </modules>
 
     <properties>
@@ -102,7 +104,7 @@
 
 
         <!-- Legend -->
-        <legend.pure.version>1.30.0</legend.pure.version>
+        <legend.pure.version>1.31.0</legend.pure.version>
         <legend.shared.version>0.12.0</legend.shared.version>
 
         <!-- Dependency versions -->
@@ -132,7 +134,7 @@
         <pac4j.jaxrs.version>3.0.0</pac4j.jaxrs.version>
         <pac4j.jersey.version>3.0.0</pac4j.jersey.version>
         <antlr.version>4.8-1</antlr.version>
-        <jetty.version>9.4.41.v20210516</jetty.version>
+        <jetty.version>9.4.43.v20210629</jetty.version>
         <jersey.version>2.25.1</jersey.version>
         <javax.servlet.version>3.1.0</javax.servlet.version>
         <javax.inject.version>1</javax.inject.version>
@@ -474,6 +476,11 @@
             <dependency>
                 <groupId>org.finos.legend.engine</groupId>
                 <artifactId>legend-engine-protocol-pure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.finos.legend.engine</groupId>
+                <artifactId>legend-engine-protocol-graphQL</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

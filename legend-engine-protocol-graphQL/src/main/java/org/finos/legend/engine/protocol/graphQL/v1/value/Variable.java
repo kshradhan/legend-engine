@@ -1,4 +1,4 @@
-// Copyright 2020 Goldman Sachs
+// Copyright 2021 Goldman Sachs
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,17 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package org.finos.legend.engine.plan.dependencies.domain.flatdata;
+package org.finos.legend.engine.protocol.graphQL.v1.value;
 
-import java.util.List;
-
-public interface RawFlatData
+public class Variable extends Value
 {
-    long getNumber();
+    public String name;
 
-    long getLineNumber();
-
-    String getRecord();
-
-    List<RawFlatDataValue> getRecordValues();
+    @Override
+    public <T> T accept(ValueVisitor<T> visitor)
+    {
+        return visitor.visit(this);
+    }
 }
